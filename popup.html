@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to WebP Converter</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🖼️ Image Converter</h1>
+            <p>Convert PNG, JPG, JPEG to WebP</p>
+        </div>
+        
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-content">
+                <div class="upload-icon">📁</div>
+                <p>Drop images here or click to browse</p>
+                <p class="file-types">Supports: PNG, JPG, JPEG</p>
+            </div>
+            <input type="file" id="fileInput" multiple accept=".png,.jpg,.jpeg" hidden>
+        </div>
+        
+        <div class="settings">
+            <label for="qualitySlider">Quality: <span id="qualityValue">80</span>%</label>
+            <input type="range" id="qualitySlider" min="1" max="100" value="80">
+        </div>
+        
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p id="progressText">Converting...</p>
+        </div>
+        
+        <div class="results" id="results" style="display: none;">
+            <h3>Conversion Results</h3>
+            <div id="resultsList"></div>
+        </div>
+        
+        <div class="footer">
+            <button id="convertBtn" disabled>Convert to WebP</button>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
